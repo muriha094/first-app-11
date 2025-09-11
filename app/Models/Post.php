@@ -12,6 +12,8 @@ class Post extends Model
 
      protected $fillable = ['title', 'author', 'slug', 'body'];
 
+     protected $with = ['author', 'category']; // Menambahkan Eager Loading secara default pada model Post
+
      public function author(): BelongsTo
      {
           return $this->belongsTo(User::class);
