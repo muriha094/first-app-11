@@ -4,6 +4,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
@@ -21,8 +22,8 @@ Route::get('/posts', function () {
     return view('posts', [
         'title' => 'Blog',
         'posts' => Post::latest()
-                       ->filter(request(['search', 'category']))
-                       ->get()
+                       ->filter(request(['search', 'category', 'author']))
+                       ->paginate(6)->withQueryString() // menambahkan withquerystring supaya kategori terbawa saat ganti halaman
     ]);
 });
 
@@ -53,3 +54,5 @@ Route::get('/categories/{category:slug}', function (Category $category) {
 Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact']);
 });
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
