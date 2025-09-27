@@ -15,30 +15,44 @@ class CategorySeeder extends Seeder
     {
         // Category::factory(3)->create();    
         Category::create([
-            'name' => 'Web Programming',
-            'slug' => 'web-programming',
+            'name' => 'Mindset',
+            'slug' => 'mindset',
             'color' => 'green'
 
         ]);
         
          Category::create([
-            'name' => 'Backend Programming',
-            'slug' => 'backend-programming',
+            'name' => 'Journey',
+            'slug' => 'journey',
             'color' => 'yellow'
 
         ]);
 
          Category::create([
-            'name' => 'Frontend Programming',
-            'slug' => 'frontend-programming',
+            'name' => 'Creativity',
+            'slug' => 'creativity',
             'color' => 'red'
 
         ]);
 
         Category::create([
-            'name' => 'Machine Learning',
-            'slug' => 'machine-learning',
+            'name' => 'Knowledge',
+            'slug' => 'knowledge',
             'color' => 'purple'
+
+        ]);
+
+         Category::create([
+            'name' => 'Lifestyle',
+            'slug' => 'lifestyle',
+            'color' => 'pink'
+
+        ]);
+
+        Category::create([
+            'name' => 'Technology',
+            'slug' => 'tech',
+            'color' => 'blue'
 
         ]);
     }
